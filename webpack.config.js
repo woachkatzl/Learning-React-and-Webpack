@@ -25,6 +25,15 @@ module.exports = {
             },
         ],
     },
+    resolve: {
+        extensions: ['.jsx', '.js'],
+    },
+    resolveLoader: {
+        modules: [
+            path.resolve(process.cwd(), 'node_modules'),
+            path.resolve(__dirname, 'node_modules'),
+        ],
+    },
     plugins: [
         new HtmlWebpackPlugin({
             inject: true,
