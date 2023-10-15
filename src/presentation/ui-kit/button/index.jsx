@@ -2,19 +2,19 @@ import React from 'react';
 import './styles.scss';
 
 export function Button({ onClick, children }) {
+  const onClickHandler = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
 
-    const onClickHandler = (e) => {
-        e.preventDefault();
-        e.stopPropagation();
+    onClick();
+  };
 
-        onClick();
-    };
-
-    return (
-        <button className='button' onClick={onClickHandler}>{children}</button>
-    );
+  return (
+    <button className="button" onClick={onClickHandler}>
+      {children}
+    </button>
+  );
 }
-
 
 /* class Button {
     constructor(onClick, text) {
