@@ -1,5 +1,6 @@
 import React from 'react';
-import './styles.scss';
+//import './styles.scss';
+import styles from './button.module.scss';
 
 export function Button({ onClick, children }) {
   const onClickHandler = (e) => {
@@ -10,7 +11,7 @@ export function Button({ onClick, children }) {
   };
 
   return (
-    <button className="button" onClick={onClickHandler}>
+    <button className={styles.button} onClick={onClickHandler}>
       {children}
     </button>
   );
