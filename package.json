@@ -9,11 +9,12 @@
     "watch": "webpack --watch",
     "lint": "eslint --ext .js --ext .jsx .",
     "fix": "eslint --ext .js --ext .jsx --fix .",
+    "lint-staged": "lint-staged",
     "prepare": "husky install"
   },
   "lint-staged": {
     "*.{js, jsx}": [
-      "es-lint --max-warnings=0",
+      "eslint --max-warnings=0",
       "prettier --write --ignore-unknown"
     ]
   },

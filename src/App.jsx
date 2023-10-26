@@ -8,10 +8,10 @@ function onButtonClick() {
 }
 
 function App() {
-  return(
+  return (
     <>
       <Button onClick={onButtonClick}>Кнопка React</Button>
-      <Checkbox1/>
+      <Checkbox1 />
     </>
   );
 }

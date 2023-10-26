@@ -1,5 +1,5 @@
 /node_modules/
 /dist/
 /.vscode/
-.prettierrc.json
 pre-commit
+.prettierrc.json
