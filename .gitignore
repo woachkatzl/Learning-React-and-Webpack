@@ -2,4 +2,3 @@
 /dist/
 /.vscode/
 pre-commit
-.prettierrc.json
