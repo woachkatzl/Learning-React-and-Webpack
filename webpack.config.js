@@ -38,6 +38,27 @@ module.exports = {
   ],
   output: {
     filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'bundle'),
+  },
+  devServer: {
+    static: {
+      directory: path.join(process.cwd(), 'bundle'), //Директорий, откуда забирать статику, которую отдавать в браузер
+    },
+    //настройки клиента
+    client: {
+      progress: true,
+      //Что показывать поверх приложения (ошибки, предупреждения)
+      overlay: {
+        errors: true,
+        warnings: false,
+      },
+    },
+    //Обработка всех запросов на index.html, работает для одностраничных приложений. Для многостраничных нужно поставить false
+    historyApiFallback: true,
+    //Какое приложение открывать при запуске (браузер)
+    open: true,
+    hot: true,
+    compress: true,
+    port: 3000,
   },
 };
