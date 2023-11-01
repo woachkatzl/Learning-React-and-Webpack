@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Button } from "./presentation/ui-kit/button";
-import { Checkbox1 } from "./presentation/ui-kit/checkbox";
+import { Button } from "./ui-kit/button";
+import { Checkbox1 } from "./ui-kit/checkbox";
 
 function onButtonClick() {
   console.log("success");
