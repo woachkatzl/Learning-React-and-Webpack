@@ -11,10 +11,11 @@ import { NavBar } from "./components/NavBar";
 import { Home } from "./pages/Home";
 import { About } from "./pages/About";
 import { Users } from "./pages/Users";
+import { UserPage } from "./pages/UserPage";
 import { NoMatch } from "./pages/MissingPage";
 
 //information
-import { users } from "../domain/info/Users";
+import { users } from "../domain/info/UsersInfo";
 
 function onButtonClick() {
   console.log("success");
@@ -32,7 +33,8 @@ function App() {
           <Routes>
             <Route path="/about" element={<About />} />
             <Route path="/" element={<Home />} />
-            <Route path="/users" element={<Users />} />
+            <Route path="/users" element={<Users users={users} />} />
+            <Route path="/users/:id" element={<UserPage users={users} />} />
             <Route path="*" element={<NoMatch />} />
           </Routes>
         </div>
