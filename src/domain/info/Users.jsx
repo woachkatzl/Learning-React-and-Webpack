@@ -3,3 +3,5 @@ const users = [
   { id: 2, name: "Kate Spade" },
   { id: 3, name: "Jimmy Gordon" },
 ];
+
+export { users };
