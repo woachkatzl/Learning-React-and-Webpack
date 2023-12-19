@@ -17,15 +17,20 @@ import { NoMatch } from "./pages/MissingPage";
 //information
 import { users } from "../domain/info/UsersInfo";
 
-function onButtonClick() {
-  console.log("success");
-}
-
 function App() {
+  const onButtonClick = (name, e) => {
+    console.log("success, " + name);
+    console.log(e.target);
+    console.log(e.type);
+  };
+
   return (
     <Router>
       <div>
-        <Button onClick={onButtonClick}>Кнопка React</Button>
+        <Button
+          onClickFunc={(e) => onButtonClick("Yulia", e)}
+          children={"Кнопка React"}
+        ></Button>
         <Checkbox1 />
         <Timer />
         <div style={{ border: "1px solid red" }}>

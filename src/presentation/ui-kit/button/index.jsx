@@ -2,12 +2,12 @@ import React from "react";
 //import './styles.scss';
 import styles from "./button.module.scss";
 
-export function Button({ onClick, children }) {
+export function Button({ onClickFunc, children }) {
   const onClickHandler = (e) => {
     e.preventDefault();
     e.stopPropagation();
 
-    onClick();
+    onClickFunc(e);
   };
 
   return (
