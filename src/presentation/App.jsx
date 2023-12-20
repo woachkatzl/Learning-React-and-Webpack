@@ -13,6 +13,7 @@ import { About } from "./pages/About";
 import { Users } from "./pages/Users";
 import { UserPage } from "./pages/UserPage";
 import { NoMatch } from "./pages/MissingPage";
+import { ToDos } from "./pages/ToDos";
 
 //information
 import { users } from "../domain/info/UsersInfo";
@@ -40,6 +41,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/users" element={<Users users={users} />} />
             <Route path="/users/:id" element={<UserPage users={users} />} />
+            <Route path="/to-do" element={<ToDos></ToDos>} />
             <Route path="*" element={<NoMatch />} />
           </Routes>
         </div>
