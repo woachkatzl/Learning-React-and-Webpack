@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 
 function ToDoItem(props) {
-  //const { name, onClickFunc } = props;
-
   const [checked, setChecked] = useState(false);
 
   const handleCheckedState = () => {

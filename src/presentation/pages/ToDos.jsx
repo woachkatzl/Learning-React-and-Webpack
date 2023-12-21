@@ -6,23 +6,29 @@ import { tasks } from "../../domain/info/tasksInfo";
 //components
 import { ToDoItem } from "../components/ToDoItem";
 
+//hooks
+import { useLocalStorage } from "../../hooks/useLocalStorage";
+
 function ToDos() {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useLocalStorage("toDoList", []);
 
-  useEffect(() => {
-    setItems(tasks);
-  }, []);
+  // useEffect(() => {
+  //   setItems(tasks);
+  // }, []);
 
-  //When the information is acutally retrieved from storage:
-  //   useEffect(() => {
-  //     setItems(JSON.parse(localStorage.getItem("toDoList")));
-  //   }, []);
+  //When the information is acutally retrieved from storage. But not necessary when using the custom hook useLocalStorage.
+  //useEffect(() => {
+  //Can be used once when first launching the server to create local storage and then commented out
+  //localStorage.setItem("toDoList", tasks);
+
+  //setItems(JSON.parse(localStorage.getItem("toDoList")));
+  //}, []);
 
   const deleteItem = (id) => {
     const updatedTasks = items.filter((item) => item.id !== id);
     setItems(updatedTasks);
 
-    //If using storage, also need to update it
+    //If using storage, also need to update it. But not necessary when using the custom hook useLocalStorage.
     //localStorage.setItem("toDoList", JSON.stringify(updatedTasks));
   };
 
