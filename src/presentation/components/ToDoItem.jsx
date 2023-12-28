@@ -9,7 +9,7 @@ function ToDoItem(props) {
 
   return (
     <div {...props}>
-      <input type="checkbox" onChange={handleCheckedState} />
+      <input type="checkbox" checked={checked} onChange={handleCheckedState} />
       <label
         style={
           checked
