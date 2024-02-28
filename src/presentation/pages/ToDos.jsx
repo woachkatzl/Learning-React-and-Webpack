@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 //info
 import { tasks } from "../../domain/info/tasksInfo";
@@ -15,6 +15,8 @@ function ToDos() {
   const [items, setItems] = useLocalStorage("toDoList", []);
 
   const [newItem, setNewItem] = useState(""); //state for the form button (adding items), pass to a child
+
+  const inputRef = useRef();
 
   // useEffect(() => {
   //   setItems(tasks);
@@ -44,6 +46,7 @@ function ToDos() {
     const updatedItems = [...items, itemToAdd]; //adding it to the list
     setItems(updatedItems); //setting the update list to display and save into storage
     setNewItem(""); //clearing the input field
+    inputRef.current.focus(); //Setting the focus into the input field after submission using ref
   };
 
   return (
@@ -66,6 +69,7 @@ function ToDos() {
         newItem={newItem}
         setNewItem={setNewItem}
         handleClick={addItem}
+        ref={inputRef}
       />
     </main>
   );

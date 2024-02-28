@@ -1,6 +1,6 @@
-import React from "react";
+import React, { forwardRef } from "react";
 
-function FormButton(props) {
+const FormButton = forwardRef((props, ref) => {
   const { newItem, setNewItem, handleClick } = props;
 
   return (
@@ -10,12 +10,13 @@ function FormButton(props) {
         required
         value={newItem}
         onChange={(e) => setNewItem(e.target.value)}
+        ref={ref}
       />
       <button type="submit" onClick={handleClick}>
         Add
       </button>
     </form>
   );
-}
+});
 
 export { FormButton };
