@@ -107,3 +107,31 @@
   opacity: 0.5;
   transform: none;
 }
+
+.avatarSaveBtn {
+  width: 100%;
+  background: linear-gradient(
+    180deg,
+    #a0fafa 0%,
+    #35c8f7 16.67%,
+    #07b9f1 43.23%,
+    #5589d6 94.27%,
+    #5d9cca 100%
+  );
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 19px;
+  padding: 13px 30px;
+  min-width: 80px;
+  border-radius: 50px;
+  border: 3px solid #ffffff;
+  cursor: pointer;
+}
+
+.avatarSaveBtn:active {
+  transform: scale(0.98);
+}
+
+.avatarSaveBtn:hover {
+  background: linear-gradient(to bottom, #a0eefc, #6ac9e9, #6698d4);
+}

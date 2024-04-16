@@ -45,7 +45,7 @@ function UserPage(props) {
               <img src={arrowRight} alt="Arrow" />
             </button>
           </div>
-          <button>Save</button>
+          <button className="avatarSaveBtn">Save</button>
         </Modal>
       )}
     </div>
