@@ -7,6 +7,8 @@ import userImage from "../../assets/cat-avatar-2.png";
 import arrowLeft from "../../assets/arrow_left.svg";
 import arrowRight from "../../assets/arrow_right.svg";
 
+import "./UserPage.scss";
+
 function UserPage(props) {
   const { users } = props;
 
