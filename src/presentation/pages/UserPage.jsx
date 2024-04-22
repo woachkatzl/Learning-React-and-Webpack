@@ -20,6 +20,7 @@ function UserPage(props) {
   const { id } = useParams();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [avatarIndex, setAvatarIndex] = useState(0);
+  const [userAvatar, setUserAvatar] = useState(userAvatars[0]);
 
   const user = users.find((user) => user.id == id);
 
@@ -35,11 +36,17 @@ function UserPage(props) {
     });
   };
 
+  const handleAvatarSave = () => {
+    localStorage.setItem("userAvatar", JSON.stringify(avatarIndex));
+    setUserAvatar(userAvatars[avatarIndex]);
+    setIsModalOpen(false);
+  };
+
   return (
     <div>
       <h2>{user.name}</h2>
       <img
-        src={userImage}
+        src={userAvatar}
         onClick={() => {
           setIsModalOpen(true);
         }}
@@ -75,7 +82,9 @@ function UserPage(props) {
               <img src={arrowRight} alt="Arrow" />
             </button>
           </div>
-          <button className="avatarSaveBtn">Save</button>
+          <button className="avatarSaveBtn" onClick={() => handleAvatarSave()}>
+            Save
+          </button>
         </Modal>
       )}
     </div>
