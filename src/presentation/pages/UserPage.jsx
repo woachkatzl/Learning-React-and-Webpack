@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { Modal } from "antd";
@@ -23,6 +23,13 @@ function UserPage(props) {
   const [userAvatar, setUserAvatar] = useState(userAvatars[0]);
 
   const user = users.find((user) => user.id == id);
+
+  useEffect(() => {
+    const currentIndex = JSON.parse(localStorage.getItem("userAvatar"));
+    //Checking if the saved data exists and if there is a userAvatars array element inder this index
+    if (currentIndex && userAvatars[currentIndex])
+      setUserAvatar(userAvatars[currentIndex]);
+  }, []);
 
   const handleAvatarLeft = () => {
     setAvatarIndex((prevIndex) => {
