@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 
 import { Modal } from "antd";
 
+import { SelectionBar } from "../components/selectionBar";
+
 import userImage from "../../assets/cat-avatar-2.png";
 import userImage2 from "../../assets/cat-avatar-3.png";
 import userImage3 from "../../assets/cat-avatar-4.png";
@@ -67,6 +69,10 @@ function UserPage(props) {
           className="avatar-selection-modal"
           width="620px"
         >
+          <SelectionBar
+            availableOptions={userAvatars}
+            currentOption={avatarIndex}
+          ></SelectionBar>
           <p className="avatarModuleText">Choose an avatar</p>
           <div className="avatarModuleContent">
             <button

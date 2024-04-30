@@ -25,4 +25,4 @@ const SelectionBar = ({ availableOptions, currentOption }) => {
   );
 };
 
-export default SelectionBar;
+export { SelectionBar };
